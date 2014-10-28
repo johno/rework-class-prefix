@@ -18,9 +18,6 @@ npm install --save rework-class-prefix
 ## Usage
 
 ```js
-var src = './test/fixtures/bootstrap.css';
-var target = './test/outputs/rework-bootstrap.css';
-
 var fs          = require('fs'),
     rework      = require('rework'),
     classPrefix = require('rework-class-prefix');
