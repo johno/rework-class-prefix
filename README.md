@@ -15,18 +15,21 @@ npm install --save rework-class-prefix
 
 ## Usage
 
+Example use in a gulpfile:
+
 ```js
-var fs          = require('fs'),
-    rework      = require('rework'),
+var gulp        = require('gulp'),
+    name        = require('gulp-rename'),
+    rework      = require('gulp-rework'),
+    reworkNPM   = require('rework-npm'),
     classPrefix = require('rework-class-prefix');
 
-var css = fs.readFileSync('./some-css-file.css', 'utf-8');
-
-css = rework(css)
-  .use(classPrefix('.my-prefix-'))
-  .toString();
-
-fs.writeFileSync('./prefixed-css-file.css', css, 'utf-8');
+gulp.task('css', function() {
+  return gulp.src('index.css')
+    .pipe(rework(reworkNPM(), classPrefix('prfx-')))
+    .pipe(name('index-prefixed.css'))
+    .pipe(gulp.dest('css'));
+});
 ```
 
 ## License
