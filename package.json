@@ -23,6 +23,6 @@
   },
   "homepage": "https://github.com/johnotander/rework-class-prefix",
   "dependencies": {
-    "rework-visit": "^1.0.0"
+    "rework-walk": "^1.0.0"
   }
 }

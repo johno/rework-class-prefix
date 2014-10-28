@@ -1,15 +1,16 @@
 'use strict';
 
-module.exports = function(options) {
-  return function classPrefix(prefix) {
-    var visit = require('rework-visit');
-
-    visit(prefix, function(rule, node) {
+module.exports = function classPrefix(prefix) {
+  return function classPrefix(styling) {
+    var walk = require('rework-walk');
+    walk(styling, function(rule, node) {
       if (!rule.selectors) return rule;
 
       rule.selectors = rule.selectors.map(function(selector) {
-        if (selector.indexOf('.') !== 0) {
-          selector.split('.').join('.' + prefix);
+        if (selector.indexOf('.') === 0) {
+          return selector.split('.').join('.' + prefix);
+        } else {
+          return selector;
         }
       });
     });
