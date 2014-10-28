@@ -1,7 +1,5 @@
 # Rework Class Prefix
 
-_Currently under development._
-
 Add a class prefix to further sandbox CSS styling for third-party imports.
 
 This comes in handy when you want to import two different CSS modules that might
@@ -25,7 +23,7 @@ var fs          = require('fs'),
 var css = fs.readFileSync('./some-css-file.css', 'utf-8');
 
 css = rework(css)
-  .use(classPrefix('.pr-'))
+  .use(classPrefix('.my-prefix-'))
   .toString();
 
 fs.writeFileSync('./prefixed-css-file.css', css, 'utf-8');
