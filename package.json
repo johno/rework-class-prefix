@@ -1,0 +1,28 @@
+{
+  "name": "rework-class-prefix",
+  "version": "0.0.1",
+  "description": "Add a class prefix to further sandbox CSS styling.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johnotander/rework-class-prefix.git"
+  },
+  "keywords": [
+    "rework",
+    "class",
+    "class-prefix",
+    "css"
+  ],
+  "author": "John Otander",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/johnotander/rework-class-prefix/issues"
+  },
+  "homepage": "https://github.com/johnotander/rework-class-prefix",
+  "dependencies": {
+    "rework-walk": "^1.0.0"
+  }
+}
