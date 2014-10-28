@@ -37,7 +37,7 @@ MIT
 
 ## Acknowledgements
 
-Leverages <https://github.com/intesso/rework-walk>.
+Leverages <https://github.com/reworkcss/rework-visit>.
 
 ## Contributing
 
