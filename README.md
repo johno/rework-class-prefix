@@ -1,11 +1,29 @@
 # Rework Class Prefix
 
+[![Build Status](https://travis-ci.org/johnotander/rework-class-prefix.svg?branch=master)](https://travis-ci.org/johnotander/rework-class-prefix)
+
 Add a class prefix to further sandbox CSS styling for third-party imports.
 
 This comes in handy when you want to import two different CSS modules that might
 have conflictings styles. For example, if module A and module B both have a
 `.media` class selector that have different use cases, you can run them through
 `rework-class-prefix` and result in something like `.a-media` and `.b-media`.
+
+__Example input__
+
+```css
+.grid { /* ... */ }
+.grid-row { /* ... */ }
+.grid-row-col { /* ... */ }
+```
+
+__Example output__
+`classPrefix('flx-')`
+```css
+.flx-grid { /* ... */ }
+.flx-grid-row { /* ... */ }
+.flx-grid-row-col { /* ... */ }
+```
 
 ## Installation
 
@@ -15,7 +33,15 @@ npm install --save rework-class-prefix
 
 ## Usage
 
-Example use in a gulpfile:
+```javascript
+var fs        = require('fs'),
+    rework    = require('rework'),
+    classPrfx = require('rework-class-prefix');
+
+var css = fs.readFileSync('css/my-file.css', 'utf8').toString();
+var out = rework(css).use(classPrfx('my-prefix-')).toString();
+```
+#### In a gulpfile
 
 ```js
 var gulp        = require('gulp'),
