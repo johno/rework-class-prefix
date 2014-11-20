@@ -4,7 +4,7 @@
   "description": "Add a class prefix to further sandbox CSS styling.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,10 @@
   },
   "homepage": "https://github.com/johnotander/rework-class-prefix",
   "dependencies": {
+    "rework": "^1.0.1",
     "rework-walk": "^1.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.0.1"
   }
 }
