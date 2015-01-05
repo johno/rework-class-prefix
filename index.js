@@ -1,5 +1,7 @@
 'use strict';
 
+var isPresent = require('is-present');
+
 module.exports = function classPrefix(prefix, options) {
   options = options || {};
 
@@ -9,8 +11,14 @@ module.exports = function classPrefix(prefix, options) {
       if (!rule.selectors) return rule;
 
       rule.selectors = rule.selectors.map(function(selector) {
-        
+
         if (selector.indexOf('.') === 0) {
+          if (isPresent(options.ignore)) {
+            options.ignore.some(function() {
+              
+            });
+          }
+
           return selector.split('.').join('.' + prefix);
         } else {
           return selector;
