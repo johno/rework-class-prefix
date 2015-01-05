@@ -17,7 +17,11 @@ describe('rework-class-prefix', function() {
   });
 
   it('correctly ignores selectors when specified', function() {
-    var output = rework(fixture('ignored-selectors.css')).use(classPrfx('prfx-', { ignored: ['.ignored-class', /prefix/] })).toString().trim();
+    var output = rework(fixture('ignored-selectors.css'))
+                   .use(
+                     classPrfx('prfx-', { ignored: ['.ignored-class', /prefix/] })
+                   ).toString().trim();
+
     var expected = fixture('ignored-selectors.css.expected');
 
     assert.equal(output, expected);
