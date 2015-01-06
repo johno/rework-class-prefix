@@ -58,6 +58,19 @@ gulp.task('css', function() {
 });
 ```
 
+### Using the `ignored` option
+
+```javascript
+var fs        = require('fs'),
+rework    = require('rework'),
+classPrfx = require('rework-class-prefix');
+
+var css = fs.readFileSync('css/my-file.css', 'utf8').toString();
+var out = rework(css).use(
+            classPrfx('my-prefix-', { ignored: [/^ng-/, 'some-class-to-ignore'] })
+          ).toString();
+```
+
 ## License
 
 MIT
