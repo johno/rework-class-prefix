@@ -2,6 +2,10 @@
   color: green;
 }
 
+fieldset[disabled] .my-class {
+  color: tomato;
+}
+
 .my-class .with-another-class {
   box-sizing: border-box;
 }

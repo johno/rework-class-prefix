@@ -1,6 +1,6 @@
 {
   "name": "rework-class-prefix",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Add a class prefix to further sandbox CSS styling.",
   "main": "index.js",
   "scripts": {
@@ -23,9 +23,9 @@
   },
   "homepage": "https://github.com/johnotander/rework-class-prefix",
   "dependencies": {
+    "has-class-selector": "0.0.1",
     "is-present": "0.0.1",
-    "rework": "^1.0.1",
-    "rework-walk": "^1.0.0"
+    "rework": "^1.0.1"
   },
   "devDependencies": {
     "mocha": "^2.0.1"

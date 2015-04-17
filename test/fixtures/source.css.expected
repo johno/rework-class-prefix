@@ -2,6 +2,10 @@
   color: green;
 }
 
+fieldset[disabled] .prfx-my-class {
+  color: tomato;
+}
+
 .prfx-my-class .prfx-with-another-class {
   box-sizing: border-box;
 }

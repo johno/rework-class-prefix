@@ -1,22 +1,20 @@
 'use strict';
 
 var isPresent = require('is-present');
+var hasClassSelector = require('has-class-selector');
 
 module.exports = function classPrefix(prefix, options) {
   options = options || {};
   var ignored = options.ignored;
 
   return function classPrefix(styling) {
-    var walk = require('rework-walk');
-    walk(styling, function(rule, node) {
+    styling.rules.forEach(function(rule) {
       if (!rule.selectors) return rule;
 
       rule.selectors = rule.selectors.map(function(selector) {
         var shouldIgnore = false;
 
-        // See if it's a class selector
-        if (selector.indexOf('.') === 0) {
-
+        if (hasClassSelector(selector)) {
           // Ensure that the selector doesn't match the ignored list
           if (isPresent(ignored)) {
             shouldIgnore = ignored.some(function(opt) {
