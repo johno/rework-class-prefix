@@ -1,6 +1,4 @@
-# Rework Class Prefix
-
-[![Build Status](https://travis-ci.org/johnotander/rework-class-prefix.svg?branch=master)](https://travis-ci.org/johnotander/rework-class-prefix)
+# rework-class-prefix [![Build Status](https://travis-ci.org/johnotander/rework-class-prefix.svg?branch=master)](https://travis-ci.org/johnotander/rework-class-prefix)
 
 Add a class prefix to further sandbox CSS styling for third-party imports.
 
