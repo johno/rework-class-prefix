@@ -1,6 +1,6 @@
 {
   "name": "rework-class-prefix",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Add a class prefix to further sandbox CSS styling.",
   "main": "index.js",
   "scripts": {
