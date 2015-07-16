@@ -7,8 +7,13 @@ module.exports = function classPrefix(prefix, options) {
   options = options || {};
   var ignored = options.ignored;
 
-  return function classPrefix(styling) {
+  return function prefixRules(styling) {
     styling.rules.forEach(function(rule) {
+
+      if (rule.rules) {
+        return prefixRules(rule);
+      }
+
       if (!rule.selectors) return rule;
 
       rule.selectors = rule.selectors.map(function(selector) {
