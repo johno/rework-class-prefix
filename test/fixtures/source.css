@@ -9,3 +9,9 @@ fieldset[disabled] .my-class {
 .my-class .with-another-class {
   box-sizing: border-box;
 }
+
+@media screen and (min-width: 48rem) {
+  .my-class {
+    color: pink;
+  }
+}
