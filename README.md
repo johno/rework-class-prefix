@@ -82,6 +82,12 @@ var out = rework(css).use(
           ).toString();
 ```
 
+### Example Prefix Bootstrap 4 css file
+
+1. Clone this repo
+2. Run: `npm install`
+3. Run:  `node usage/index.js`
+
 ## License
 
 MIT
