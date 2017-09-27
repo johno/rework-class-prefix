@@ -5,11 +5,14 @@ var hasClassSelector = require('has-class-selector');
 
 module.exports = function classPrefix(prefix, options) {
   options = options || {};
-  var ignored = options.ignored;
+  let ignored = options.ignored;
+  let prefixClassForTag = options.prefixClassForTag;
 
+  /** This return will create new rule in new file */
   return function prefixRules(styling) {
     styling.rules.forEach(function(rule) {
 
+      /** Ignore @media */
       if (rule.rules) {
         return prefixRules(rule);
       }
@@ -18,6 +21,11 @@ module.exports = function classPrefix(prefix, options) {
 
       rule.selectors = rule.selectors.map(function(selector) {
         var shouldIgnore = false;
+
+        /** Ignore @-ms-viewport */
+        if(selector.indexOf("@") !== -1) {
+          return selector;
+        }
 
         if (hasClassSelector(selector)) {
           // Ensure that the selector doesn't match the ignored list
@@ -32,9 +40,21 @@ module.exports = function classPrefix(prefix, options) {
           }
 
           return shouldIgnore ? selector : selector.split('.').join('.' + prefix);
-        } else {
-          return selector;
         }
+        else if(isPresent(prefixClassForTag)) {
+
+          /**
+           * Replace html and body to prefixClassForTag
+           */
+          if(selector.indexOf("html") !== -1 || selector.indexOf("body") !== -1){
+            return selector.replace("html", "." + prefixClassForTag);
+          }
+          else {
+            return '.' + prefixClassForTag +' ' + selector;
+          }
+        }
+
+        return selector;
       });
     });
   };
