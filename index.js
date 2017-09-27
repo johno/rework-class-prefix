@@ -46,9 +46,14 @@ module.exports = function classPrefix(prefix, options) {
           /**
            * Replace html and body to prefixClassForTag
            */
-          if(selector.indexOf("html") !== -1 || selector.indexOf("body") !== -1){
+          if(selector.indexOf("html") !== -1){
             return selector.replace("html", "." + prefixClassForTag);
           }
+
+          if(selector.indexOf("body") !== -1) {
+            return selector.replace("body", "." + prefixClassForTag);
+          }
+
           else {
             return '.' + prefixClassForTag +' ' + selector;
           }
