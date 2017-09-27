@@ -5,8 +5,8 @@ var hasClassSelector = require('has-class-selector');
 
 module.exports = function classPrefix(prefix, options) {
   options = options || {};
-  let ignored = options.ignored;
-  let prefixClassForTag = options.prefixClassForTag;
+  var ignored = options.ignored;
+  var prefixClassForTag = options.prefixClassForTag;
 
   /** This return will create new rule in new file */
   return function prefixRules(styling) {
