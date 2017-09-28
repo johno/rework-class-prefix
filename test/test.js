@@ -37,4 +37,15 @@ describe('rework-class-prefix', function() {
 
     assert.equal(output, expected);
   });
+
+  it('have tag and class', function() {
+    var output = rework(fixture('have-class-tag.css'))
+      .use(
+      classPrfx('tw-', { prefixClassForTag: 'tw' })
+    ).toString().trim();
+
+    var expected = fixture('have-class-tag.css.expected');
+
+    assert.equal(output, expected);
+  });
 });

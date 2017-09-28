@@ -81,6 +81,7 @@ var out = rework(css).use(
             classPrfx('twitter-', { prefixClassForTag: 'twitter' })
           ).toString();
 ```
+Note: prefix class will take higher priority. Please check the test case (4).
 
 ### Example Prefix Bootstrap 4 css file
 
