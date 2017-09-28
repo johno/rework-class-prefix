@@ -69,6 +69,26 @@ var out = rework(css).use(
           ).toString();
 ```
 
+### Using the `addPrefixClassForTag` option
+
+```javascript
+var fs        = require('fs'),
+rework    = require('rework'),
+classPrfx = require('rework-class-prefix');
+
+var css = fs.readFileSync('css/my-file.css', 'utf8').toString();
+var out = rework(css).use(
+            classPrfx('twitter-', { prefixClassForTag: 'twitter' })
+          ).toString();
+```
+Note: prefix class will take higher priority. Please check the test case (4).
+
+### Example Prefix Bootstrap 4 css file
+
+1. Clone this repo
+2. Run: `npm install`
+3. Run:  `node usage/index.js`
+
 ## License
 
 MIT

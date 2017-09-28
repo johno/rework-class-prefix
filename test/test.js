@@ -26,4 +26,26 @@ describe('rework-class-prefix', function() {
 
     assert.equal(output, expected);
   });
+
+  it('replace html, body', function() {
+    var output = rework(fixture('replace-html-body.css'))
+      .use(
+      classPrfx('prfx-', { prefixClassForTag: 'newclass' })
+    ).toString().trim();
+
+    var expected = fixture('replace-html-body.css.expected');
+
+    assert.equal(output, expected);
+  });
+
+  it('have tag and class', function() {
+    var output = rework(fixture('have-class-tag.css'))
+      .use(
+      classPrfx('tw-', { prefixClassForTag: 'tw' })
+    ).toString().trim();
+
+    var expected = fixture('have-class-tag.css.expected');
+
+    assert.equal(output, expected);
+  });
 });
